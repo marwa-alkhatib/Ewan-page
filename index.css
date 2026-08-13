@@ -1,0 +1,359 @@
+@font-face {
+  font-family: cocon;
+  src: url(./fonts/cocon-next-arabic.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  /* background-color: #d7b0c8; */
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  z-index: 9999;
+  .section1 {
+    min-height: 4vh;
+    display: flex;
+    background-color: #f7f7f7;
+    /* font-family: "Segoe UI", Tahoma, Arial, sans-serif; */
+
+    .navbar1 {
+      width: 85%;
+      display: flex;
+      justify-content: end;
+      background-color: #f7f7f7;
+      .link1 {
+        text-decoration: none;
+        width: 44%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 10rem;
+        color: #333;
+        font-size: 17px;
+        cursor: pointer;
+        font-family: "cocon";
+        font-weight: 500;
+      }
+      .link2 {
+        text-decoration: none;
+        width: 44%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 3rem;
+        color: #333;
+        font-size: 17px;
+        cursor: pointer;
+        font-family: "cocon";
+        font-weight: 500;
+      }
+    }
+    .babySection1 {
+      /* background-color: rgb(76, 68, 84); */
+      width: 15%;
+      display: flex;
+      justify-content: end;
+
+      /* الزرار - Toggle */
+      .lang-toggle {
+        display: inline-block;
+        position: relative;
+        transform: scale(0.8);
+      }
+
+      .lang-toggle input {
+        display: none;
+      }
+
+      .lang-toggle .track {
+        width: 130px;
+        height: 42px;
+        background: #a32f74;
+        border-radius: 999px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        box-sizing: border-box;
+      }
+
+      .lang-toggle input:checked + .track {
+        background: #a32f74;
+      }
+
+      .lang-toggle .track .thumb {
+        width: 50px;
+        height: 32px;
+        background: #d1d1d1;
+        border-radius: 999px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        transition: left 0.3s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .lang-toggle .track .label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+      }
+
+      .lang-toggle .track .label.en {
+        right: 16px;
+      }
+
+      .lang-toggle .track .label.ar {
+        left: 16px;
+        direction: rtl;
+        display: none;
+        font-size: 15px;
+      }
+
+      /* لما يبقى Checked (عربي) */
+      .lang-toggle input:checked + .track .thumb {
+        left: calc(100% - 56px);
+      }
+
+      .lang-toggle input:checked + .track .label.en {
+        display: none;
+      }
+
+      .lang-toggle input:checked + .track .label.ar {
+        display: block;
+      }
+    }
+  }
+
+  .section2 {
+    height: 10vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .img1 {
+      height: 70%;
+      padding-left: 14rem;
+    }
+
+    .contentPart1 {
+      display: flex;
+
+      .part1 {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        /* padding-right: 2rem; */
+        width: 30%;
+        gap: 1rem;
+        /* background-color: aquamarine; */
+        .icon1 {
+          width: 16%;
+        }
+      }
+      .part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33%;
+        padding: 1rem;
+        /* background-color: antiquewhite; */
+        gap: 1rem;
+        .icon2 {
+          width: 18%;
+        }
+      }
+      .CTA1 {
+        display: flex;
+        flex-direction: column;
+        line-height: 10px;
+        margin-right: 15px;
+        p {
+          text-align: end;
+          color: #333;
+          font-size: 15px;
+          font-family: "cocon";
+          font-weight: 500;
+        }
+        a {
+          text-decoration: none;
+          color: #333;
+          font-size: 16px;
+          cursor: pointer;
+          font-family: "cocon";
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .section3 {
+    /* height: 6vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 4rem;
+    font-family: "cocon";
+
+    nav > ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav > ul > li {
+      position: relative;
+    }
+
+    .liLinks {
+      display: block;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: #333;
+      font-family: "cocon";
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition:
+        background 0.3s,
+        color 0.3s;
+      white-space: nowrap;
+    }
+
+    .liLinks:hover {
+      background-color: #9b1fa0;
+      color: white;
+    }
+
+    .dropDownMenu {
+      direction: rtl;
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      list-style: none;
+      min-width: 220px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      border-top: 3px solid #9b1fa0;
+      z-index: 1000;
+    }
+
+    nav > ul > li:hover .dropDownMenu {
+      display: block;
+    }
+
+    .dropDownLink {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px 14px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition:
+        background 0.2s,
+        color 0.2s;
+      border-bottom: 1px solid #f0f0f0;
+      font-weight: 800;
+      font-family: "cocon";
+    }
+
+    .dropDownLink::before {
+      content: "⊙";
+      color: #9b1fa0;
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .dropDownLink:hover {
+      background-color: #9b1fa0;
+      color: white;
+      width: 117%;
+    }
+
+    .dropDownLink:hover::before {
+      color: white;
+    }
+
+    .dropDownMenu li:last-child .dropDownLink {
+      border-bottom: none;
+    }
+
+    nav > ul > li:hover > .liLinks {
+      background-color: #9b1fa0;
+      color: white;
+    }
+  }
+}
+
+main {
+    padding-top: 8px;
+
+  .section4{
+    .carousel-item {
+      transition: transform 1.6s ease-in-out; /* ← غير 0.3s لأي وقت تحبه */
+    }
+    /* مكان الأسهم */
+    .carousel-control-prev {
+      width: auto; /* ← مش محتاج مسافة */
+      padding: 10px;
+    }
+
+    .carousel-control-next {
+      width: auto;
+      padding: 10px;
+    }
+
+    /* لون الأسهم */
+    .carousel-control-prev-icon {
+      background-color: #9b1fa0;
+      padding: 20px;
+    }
+
+    .carousel-control-next-icon {
+      background-color: #9b1fa0;
+      padding: 20px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 1; /* ← بدل 0.5 */
+    }
+  }
+
+  .section5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 40vh;
+
+    .parts1{
+        width: 30%;
+        height: 60%;
+        background-color: #a32f74;
+        .icon3{
+
+        }
+        .content1{
+
+        }
+    }
+  }
+
+}
+footer {
+}
