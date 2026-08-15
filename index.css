@@ -390,24 +390,24 @@ main {
     gap: 5rem;
     padding: 4rem 0;
 
-    .head1{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        h2 {
-      text-align: center;
-      font-family: "cocon";
-      font-weight: 800;
-      font-size: 40px;
-      color: #000000;
-    }
+    .head1 {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h2 {
+        text-align: center;
+        font-family: "cocon";
+        font-weight: 800;
+        font-size: 40px;
+        color: #000000;
+      }
 
-    .title-line {
-      width: 80px; /* طول الخط */
-      height: 3px; /* سُمك الخط */
-      background-color: #9bc653;
-      margin: 5px auto 0; /* المسافة بين الكلام والخط + توسيطه */
-    }
+      .title-line {
+        width: 80px; /* طول الخط */
+        height: 3px; /* سُمك الخط */
+        background-color: #9bc653;
+        margin: 5px auto 0; /* المسافة بين الكلام والخط + توسيطه */
+      }
     }
 
     .bigbox1 {
@@ -532,6 +532,9 @@ main {
       /* أسهم الصندوق كله */
       .gallery-box {
         position: relative;
+
+        width: 94%;
+        margin: 0 auto;
       }
 
       .gallery-box > .nav-arrow {
@@ -549,22 +552,246 @@ main {
         justify-content: center;
       }
 
-     .gallery-box > .nav-prev { 
-    right: -5px; 
-}
+      .gallery-box > .nav-prev {
+        right: -5px;
+      }
 
-.gallery-box > .nav-next { 
-    left: -5px; 
+      .gallery-box > .nav-next {
+        left: -5px;
+      }
+
+      .nav-arrow {
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+      }
     }
+  }
 
-    .nav-arrow {
-    font-size: 25px;
-    color: white;
-    font-weight: bold;
-}
+  .section7 {
+    background: #f7f7f7;
+    .bigbox2 {
+      /* height: 60vh; */
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding: 4rem 0;
+      font-family: "cocon";
 
+      body {
+        background: #f4f4f4;
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        padding: 40px 0;
+      }
 
+      .head1 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h2 {
+          text-align: center;
+          font-family: "cocon";
+          font-weight: 800;
+          font-size: 40px;
+          color: #000000;
+        }
+
+        .title-line {
+          width: 80px; /* طول الخط */
+          height: 3px; /* سُمك الخط */
+          background-color: #9bc653;
+          margin: 5px auto 0; /* المسافة بين الكلام والخط + توسيطه */
+        }
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+
+        /* غيري دي من 14px إلى 4px */
+        border-radius: 4px;
+
+        aspect-ratio: 4 / 3;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+      }
+
+      .gallery-item .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.35),
+          transparent 45%
+        );
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .gallery-box {
+        position: relative;
+
+        width: 94%; /* صغرنا الصندوق كله */
+        margin: 0 auto; /* خليه في النص */
+      }
+
+      .gallery-box > .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+
+        /* نفس section6 */
+        width: 30px;
+        height: 36px;
+
+        /* شيلي الدائرة */
+        border-radius: 0;
+
+        /* نفس اللون البنفسجي */
+        background: #be2c86;
+
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* شكل السهم نفسه */
+        font-size: 25px;
+        color: white;
+        font-weight: bold;
+      }
+
+      /* نفس مكان الأسهم في section6 */
+      .gallery-box > .nav-prev {
+        right: -5px;
+      }
+
+      .gallery-box > .nav-next {
+        left: -5px;
+      }
+
+      .gallery-scroll {
+        display: flex;
+        gap: 24px;
+        overflow-x: hidden;
+        scroll-behavior: auto; /* بدل smooth */
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .gallery-col {
+        flex: 0 0 calc((100% - 48px) / 3);
+      }
+
+      .gallery-item .single-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover .single-image {
+        transform: scale(1.12);
+      }
+
+      .image-title {
+        background: #fff;
+        padding: 20px;
+        text-align: right;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .gallery-box > .nav-arrow i {
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+      }
     }
+  }
+
+  .section8 {
+    display: flex;
+    font-family: "cocon";
+    padding: 5rem 0;
+    gap: 2rem;
+
+    .part3 {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+
+      h2 {
+        text-align: right;
+        /* line-height: 24px; */
+        color: #323232;
+        font-weight: 800;
+        font-size: 40px;
+        font-style: normal;
+      }
+      .p1 {
+        text-align: right;
+        /* line-height: 24px; */
+        color: #323232;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .p2 {
+        text-align: right;
+        line-height: 24px;
+        color: #323232;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+      }
+      button {
+        width: 20%;
+        height: 40px;
+        background-color: #BB2A83;
+        color: #fff;
+        border-radius: 20px;
+        border: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+    img {
+      width: 50%;
+    }
+  }
+
+  .section9{
+    height: 150vh;
+    .bigbox3{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 3rem 0;
+      /* height: 65vh; */
+      .babybox2{
+        display: flex;
+        .part4{
+          h4{
+
+          }
+          p{
+
+          }
+        }
+        img{
+
+        }
+      }
+    }
+    
   }
 }
 
