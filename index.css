@@ -754,7 +754,7 @@ main {
       button {
         width: 20%;
         height: 40px;
-        background-color: #BB2A83;
+        background-color: #bb2a83;
         color: #fff;
         border-radius: 20px;
         border: 0;
@@ -768,30 +768,128 @@ main {
     }
   }
 
-  .section9{
-    height: 150vh;
-    .bigbox3{
+  .section9 {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    font-family: "cocon";
+
+    .head1 {
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 3rem 0;
-      /* height: 65vh; */
-      .babybox2{
+      flex-direction: column;
+      gap: 8px;
+
+      h2 {
+        text-align: center;
+        font-family: "cocon";
+        font-weight: 800;
+        font-size: 40px;
+        color: #000000;
+      }
+
+      .title-line {
+        width: 80px;
+        height: 3px;
+        background-color: #9bc653;
+        margin: 5px auto 0;
+      }
+    }
+
+    .bigbox3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      width: 68%;
+      max-width: 1200px;
+      padding: 2rem 0;
+
+      .babybox2 {
         display: flex;
-        .part4{
-          h4{
+        flex-direction: row;
+        background-color: #fff;
+        padding: 0;
+        min-height: 220px;
+        overflow: hidden;
 
+        .part4 {
+          width: 58%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 25px;
+          padding: 25px;
+
+          /* مطلوبين عشان الحركة تشتغل */
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+
+          /* طبقة اللون اللي بتتحرك */
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #9b1fa0;
+            z-index: 0;
+            transition: width 1s ease;
           }
-          p{
 
+          &:hover::before {
+            width: 100%;
+          }
+
+          h3 {
+            text-align: right;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+          }
+
+          p {
+            text-align: right;
+            color: #323232;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.7;
+            margin: 0;
+            position: relative;
+            z-index: 2;
           }
         }
-        img{
 
+        .imagesPart {
+          width: 42%;
+          position: relative;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(193, 49, 203, 0.35);
+            pointer-events: none;
+          }
         }
       }
     }
-    
+  }
+
+  .section10 {
+    height: 30vh;
   }
 }
 
