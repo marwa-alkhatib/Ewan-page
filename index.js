@@ -42,13 +42,24 @@ function moveSection6(direction) {
 
 // سهم
 section6Next.addEventListener("click", function () {
-    moveSection6(1);
+    if (isMobile()) {
+        section6MobileIndex =
+            (section6MobileIndex + 1) % section6Cols.length;
+        updateSection6MobileView();
+    } else {
+        moveSection6(1);
+    }
 });
-
 
 // السهم الآخر
 section6Prev.addEventListener("click", function () {
-    moveSection6(-1);
+    if (isMobile()) {
+        section6MobileIndex =
+            (section6MobileIndex - 1 + section6Cols.length) % section6Cols.length;
+        updateSection6MobileView();
+    } else {
+        moveSection6(-1);
+    }
 });
 
 
@@ -116,3 +127,59 @@ section7Next.addEventListener("click", function () {
 section7Prev.addEventListener("click", function () {
     moveSection7(1);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const section3 = document.getElementById("section3");
+
+  hamburgerBtn.addEventListener("click", function () {
+    hamburgerBtn.classList.toggle("active");
+    section3.classList.toggle("active");
+  });
+
+  const dropdownParents = document.querySelectorAll(".section3 nav > ul > li");
+
+  dropdownParents.forEach(function (li) {
+    const link = li.querySelector(".liLinks");
+    const dropdown = li.querySelector(".dropDownMenu");
+
+    if (dropdown) {
+      link.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          li.classList.toggle("open");
+        }
+      });
+    }
+  });
+});
+
+
+// ======================================================
+// SECTION 6 - MOBILE: كارت واحد بس ظاهر، السهم بينقل للكارت التالي
+// ======================================================
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+const section6Cols = Array.from(section6Items).map((item) =>
+  item.closest("[class*='col-']")
+);
+
+let section6MobileIndex = 0;
+
+function updateSection6MobileView() {
+  if (!isMobile()) {
+    section6Cols.forEach((col) => (col.style.display = ""));
+    return;
+  }
+  section6Cols.forEach((col, i) => {
+    col.style.display = i === section6MobileIndex ? "block" : "none";
+  });
+}
+
+// أول تحميل + كل ما حجم الشاشة يتغير
+updateSection6MobileView();
+window.addEventListener("resize", updateSection6MobileView);
