@@ -268,7 +268,7 @@ header {
 
     @media (max-width: 768px) {
       display: flex;
-      width: 18%;
+      width: 16%;
       padding: 1rem;
     }
   }
